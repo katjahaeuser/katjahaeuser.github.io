@@ -61,15 +61,13 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-
-            width: 66.67%;
-            margin: 0 auto;
         }
 
         .gallery img {
-            width: 100%;
+            width: 66.67%;
             height: auto;
             display: block;
+            margin: 0 auto;
         }
 
 
@@ -100,7 +98,10 @@
 
             .gallery {
                 grid-template-columns: 1fr;
-                width: 100%;
+            }
+
+            .gallery img {
+                width: 66.67%;
             }
 
         }
@@ -108,10 +109,13 @@
     </style>
 </head>
 
+
 <body>
 
     <header>
+
         <div class="nav-container">
+
             <nav>
                 <a href="/index.html">Home</a>
                 <a href="/publications.html">Publications</a>
@@ -120,7 +124,9 @@
                 <a class="active" href="/tincans.html">Tin Cans</a>
                 <a href="/text.html">Text</a>
             </nav>
+
         </div>
+
     </header>
 
 
@@ -128,13 +134,15 @@
 
         <div class="gallery">
 
-            <img src="tincan1.jpeg" alt="">
-            <img src="tincan2.jpeg" alt="">
-            <img src="tincan3.jpeg" alt="">
-            <img src="tincan4.jpeg" alt="">
-            <img src="tincan5.jpeg" alt="">
-            <img src="tincan6.jpeg" alt="">
-            <img src="tincan7.jpeg" alt="">
+            <img src="tincan1.jpeg" alt="Tin can">
+            <img src="tincan2.jpeg" alt="Tin can">
+            <img src="tincan3.jpeg" alt="Tin can">
+
+            <img src="tincan4.jpeg" alt="Tin can">
+            <img src="tincan5.jpeg" alt="Tin can">
+            <img src="tincan6.jpeg" alt="Tin can">
+
+            <img src="tincan7.jpeg" alt="Tin can">
 
         </div>
 
@@ -142,9 +150,11 @@
 
 
     <footer>
+
         <div class="footer-container">
             © 2026 Katja Haeuser
         </div>
+
     </footer>
 
 </body>
