@@ -59,15 +59,21 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            /* Three fixed-width columns */
+            grid-template-columns: repeat(3, 280px);
+
             gap: 30px;
+
+            /* Center entire gallery */
+            justify-content: center;
         }
 
         .gallery img {
-            width: 66.67%;
-            height: auto;
+            width: 280px !important;
+            max-width: 280px !important;
+            height: auto !important;
             display: block;
-            margin: 0 auto;
         }
 
 
@@ -98,15 +104,18 @@
 
             .gallery {
                 grid-template-columns: 1fr;
+                justify-items: center;
             }
 
             .gallery img {
-                width: 66.67%;
+                width: 280px !important;
+                max-width: 90% !important;
             }
 
         }
 
     </style>
+
 </head>
 
 
