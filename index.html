@@ -92,12 +92,6 @@
             color: #222;
         }
 
-        .subtitle {
-            font-size: 22px;
-            color: #777;
-            margin-bottom: 40px;
-        }
-
         .lead {
             font-size: 23px;
             line-height: 1.65;
@@ -125,6 +119,40 @@
         section p {
             font-size: 17px;
             margin-bottom: 20px;
+        }
+
+
+        /* ---------- ACADEMIC PROFILE ICONS ---------- */
+
+        .profile-icons {
+            margin-top: 25px;
+            display: flex;
+            gap: 18px;
+        }
+
+        .profile-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #4f5961;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: normal;
+
+            transition: background-color 0.2s ease,
+                        transform 0.2s ease;
+        }
+
+        .profile-icon:hover {
+            background-color: #b4513f;
+            color: white;
+            transform: translateY(-2px);
         }
 
 
@@ -253,6 +281,19 @@
             <p>
                 khaeuser [at] coli.uni-saarland.de
             </p>
+
+            <div class="profile-icons">
+
+                <a class="profile-icon"
+                   href="https://scholar.google.com/citations?user=eZLk7noAAAAJ&hl=en"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Google Scholar"
+                   title="Google Scholar">
+                    G
+                </a>
+
+            </div>
 
         </section>
 
