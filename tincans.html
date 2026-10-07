@@ -13,24 +13,26 @@
             box-sizing: border-box;
         }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #2d2d2d;
-    background-color: RED !important;
-}
+        html,
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #2d2d2d;
+            background-color: #ffffff !important;
+        }
 
         /* ---------- HEADER ---------- */
 
         header {
             border-bottom: 1px solid #e8e8e8;
-            background: #ffffff;
+            background-color: #ffffff !important;
         }
 
         .nav-container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 25px 35px;
+            background-color: #ffffff !important;
         }
 
         nav a {
@@ -39,7 +41,7 @@ body {
             font-weight: 600;
             letter-spacing: 0.8px;
             text-transform: uppercase;
-            color: #555;
+            color: #555555;
             text-decoration: none;
         }
 
@@ -55,24 +57,23 @@ body {
             max-width: 1500px;
             margin: 0 auto;
             padding: 30px 35px 80px 35px;
+            background-color: #ffffff !important;
         }
 
         .gallery {
             display: grid;
-
-            /* Three fixed-width columns */
-            grid-template-columns: repeat(3, 280px);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
 
-            /* Center entire gallery */
-            justify-content: center;
+            width: 66.67%;
+            margin: 0 auto;
+
+            background-color: #ffffff !important;
         }
 
         .gallery img {
-            width: 280px !important;
-            max-width: 280px !important;
-            height: auto !important;
+            width: 100%;
+            height: auto;
             display: block;
         }
 
@@ -82,8 +83,9 @@ body {
         footer {
             border-top: 1px solid #e8e8e8;
             padding: 30px 35px;
-            color: #888;
+            color: #888888;
             font-size: 13px;
+            background-color: #ffffff !important;
         }
 
         .footer-container {
@@ -104,27 +106,19 @@ body {
 
             .gallery {
                 grid-template-columns: 1fr;
-                justify-items: center;
-            }
-
-            .gallery img {
-                width: 280px !important;
-                max-width: 90% !important;
+                width: 100%;
             }
 
         }
 
     </style>
-
 </head>
 
 
 <body>
 
     <header>
-
         <div class="nav-container">
-
             <nav>
                 <a href="/index.html">Home</a>
                 <a href="/publications.html">Publications</a>
@@ -133,9 +127,7 @@ body {
                 <a class="active" href="/tincans.html">Tin Cans</a>
                 <a href="/text.html">Text</a>
             </nav>
-
         </div>
-
     </header>
 
 
@@ -143,15 +135,13 @@ body {
 
         <div class="gallery">
 
-            <img src="tincan1.jpeg" alt="Tin can">
-            <img src="tincan2.jpeg" alt="Tin can">
-            <img src="tincan3.jpeg" alt="Tin can">
-
-            <img src="tincan4.jpeg" alt="Tin can">
-            <img src="tincan5.jpeg" alt="Tin can">
-            <img src="tincan6.jpeg" alt="Tin can">
-
-            <img src="tincan7.jpeg" alt="Tin can">
+            <img src="tincan1.jpeg" alt="">
+            <img src="tincan2.jpeg" alt="">
+            <img src="tincan3.jpeg" alt="">
+            <img src="tincan4.jpeg" alt="">
+            <img src="tincan5.jpeg" alt="">
+            <img src="tincan6.jpeg" alt="">
+            <img src="tincan7.jpeg" alt="">
 
         </div>
 
@@ -159,11 +149,9 @@ body {
 
 
     <footer>
-
         <div class="footer-container">
             © 2026 Katja Haeuser
         </div>
-
     </footer>
 
 </body>
