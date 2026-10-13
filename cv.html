@@ -22,17 +22,28 @@
             line-height: 1.7;
         }
 
-        /* ---------- HEADER ---------- */
+        a {
+            color: #b4513f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #7d3025;
+        }
+
+        /* ---------- HEADER / NAVIGATION ---------- */
 
         header {
             border-bottom: 1px solid #e8e8e8;
-            background-color: #ffffff;
+            background: #ffffff;
         }
 
         .nav-container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 25px 35px;
+            display: flex;
+            align-items: center;
         }
 
         nav a {
@@ -41,8 +52,7 @@
             font-weight: 600;
             letter-spacing: 0.8px;
             text-transform: uppercase;
-            color: #555555;
-            text-decoration: none;
+            color: #555;
         }
 
         nav a:hover,
@@ -55,20 +65,15 @@
         main {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 45px 35px 90px;
+            padding: 90px 35px 100px 35px;
         }
 
         h1 {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            font-size: 21px;
-            font-weight: 500;
-            margin-top: 40px;
-            margin-bottom: 25px;
+            font-size: 38px;
+            line-height: 1.2;
+            font-weight: 400;
+            margin: 0 0 35px 0;
+            color: #222;
         }
 
         /* ---------- ACADEMIC BACKGROUND ---------- */
@@ -78,31 +83,32 @@
             grid-template-columns: 130px 1fr;
             column-gap: 35px;
             margin-bottom: 25px;
-            font-size: 15px;
+            font-size: 17px;
             line-height: 1.7;
+            color: #555;
         }
 
         .cv-year {
             font-weight: 600;
-            color: #555555;
+            color: #555;
         }
 
         .cv-description {
-            color: #2d2d2d;
+            color: #555;
         }
 
         .cv-description a {
-            color: #b4513f;
-            text-decoration: none;
+            color: #4c9da3;
+            text-decoration: underline;
         }
 
         .cv-description a:hover {
-            text-decoration: underline;
+            color: #b4513f;
         }
 
         .cv-note {
             font-size: 13px;
-            color: #777777;
+            color: #777;
         }
 
         /* ---------- FOOTER ---------- */
@@ -110,12 +116,12 @@
         footer {
             border-top: 1px solid #e8e8e8;
             padding: 30px 35px;
-            color: #888888;
+            color: #888;
             font-size: 13px;
         }
 
         .footer-container {
-            max-width: 1000px;
+            max-width: 930px;
             margin: 0 auto;
         }
 
@@ -123,19 +129,28 @@
 
         @media (max-width: 750px) {
 
+            .nav-container {
+                display: block;
+            }
+
             nav a {
                 margin-right: 18px;
                 display: inline-block;
                 margin-bottom: 8px;
             }
 
+            main {
+                padding-top: 60px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
             .cv-row {
                 grid-template-columns: 1fr;
                 gap: 4px;
-            }
-
-            main {
-                padding: 30px 25px 60px;
+                font-size: 15px;
             }
 
         }
@@ -143,27 +158,28 @@
     </style>
 </head>
 
-
 <body>
+
+    <!-- HEADER -->
 
     <header>
         <div class="nav-container">
             <nav>
-                <a href="/index.html">Home</a>
-                <a href="/publications.html">Publications</a>
-                <a href="/teaching.html">Teaching</a>
-                <a class="active" href="/cv.html">Bio</a>
-                <a href="/tincans.html">Tin Cans</a>
-                <a href="/text.html">Text</a>
+                <a href="index.html">Home</a>
+                <a href="publications.html">Publications</a>
+                <a href="teaching.html">Teaching</a>
+                <a class="active" href="cv.html">Bio</a>
+                <a href="tincans.html">Tin Cans</a>
+                <a href="text.html">Text</a>
             </nav>
         </div>
     </header>
 
+    <!-- MAIN CONTENT -->
 
     <main>
 
         <h1>Short Bio</h1>
-
 
         <div class="cv-row">
             <div class="cv-year">2022–2026</div>
@@ -177,7 +193,6 @@
             </div>
         </div>
 
-
         <div class="cv-row">
             <div class="cv-year">2018–2022</div>
             <div class="cv-description">
@@ -188,7 +203,6 @@
                 <em>Information Density and Linguistic Encoding</em>
             </div>
         </div>
-
 
         <div class="cv-row">
             <div class="cv-year">2016–2018</div>
@@ -206,7 +220,6 @@
             </div>
         </div>
 
-
         <div class="cv-row">
             <div class="cv-year">2011–2016</div>
             <div class="cv-description">
@@ -221,7 +234,6 @@
                 Shari Baum (Neurolinguistics)
             </div>
         </div>
-
 
         <div class="cv-row">
             <div class="cv-year">2010–2011</div>
@@ -240,7 +252,6 @@
             </div>
         </div>
 
-
         <div class="cv-row">
             <div class="cv-year">2007–2009</div>
             <div class="cv-description">
@@ -251,7 +262,6 @@
             </div>
         </div>
 
-
         <div class="cv-row">
             <div class="cv-year">2006–2007</div>
             <div class="cv-description">
@@ -260,7 +270,6 @@
                 Lexington, VA, USA
             </div>
         </div>
-
 
         <div class="cv-row">
             <div class="cv-year">2004–2007</div>
@@ -272,6 +281,7 @@
 
     </main>
 
+    <!-- FOOTER -->
 
     <footer>
         <div class="footer-container">
