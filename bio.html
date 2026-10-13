@@ -1,1 +1,325 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bio | Katja I. Haeuser</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #2d2d2d;
+            background-color: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* ---------- HEADER ---------- */
+
+        header {
+            border-bottom: 1px solid #e8e8e8;
+            background-color: #ffffff;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 25px 35px;
+        }
+
+        nav a {
+            margin-right: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: #555555;
+            text-decoration: none;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #b4513f;
+        }
+
+        /* ---------- MAIN CONTENT ---------- */
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 45px 35px 90px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 21px;
+            font-weight: 500;
+            margin-top: 55px;
+            margin-bottom: 25px;
+        }
+
+        /* ---------- ACADEMIC BACKGROUND ---------- */
+
+        .cv-row {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            column-gap: 35px;
+            margin-bottom: 22px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .cv-year {
+            font-weight: 600;
+            color: #555555;
+        }
+
+        .cv-description {
+            color: #2d2d2d;
+        }
+
+        /* ---------- NARRATIVE BIO ---------- */
+
+        .bio-text {
+            font-size: 15px;
+            line-height: 1.9;
+            max-width: 850px;
+        }
+
+        .bio-text p {
+            margin-bottom: 22px;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            border-top: 1px solid #e8e8e8;
+            padding: 30px 35px;
+            color: #888888;
+            font-size: 13px;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 750px) {
+
+            nav a {
+                margin-right: 18px;
+                display: inline-block;
+                margin-bottom: 8px;
+            }
+
+            .cv-row {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            main {
+                padding: 30px 25px 60px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <nav>
+                <a href="/index.html">Home</a>
+                <a href="/publications.html">Publications</a>
+                <a href="/teaching.html">Teaching</a>
+                <a class="active" href="/bio.html">Bio</a>
+                <a href="/tincans.html">Tin Cans</a>
+                <a href="/text.html">Text</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <h1>Bio</h1>
+
+        <h2>Academic Background</h2>
+
+        <div class="cv-row">
+            <div class="cv-year">2022–2026</div>
+            <div class="cv-description">
+                Principal Investigator, SFB
+                <em>Information Density and Linguistic Encoding</em>,
+                Project A5, Saarland University, Germany
+            </div>
+        </div>
+
+        <div class="cv-row">
+            <div class="cv-year">2018–2022</div>
+            <div class="cv-description">
+                Researcher &amp; Lecturer,
+                Department of Psychology,
+                Saarland University, Germany
+            </div>
+        </div>
+
+        <div class="cv-row">
+            <div class="cv-year">2016–2018</div>
+            <div class="cv-description">
+                Postdoctoral Researcher,
+                Department of Computational Linguistics,
+                Saarland University, Germany
+            </div>
+        </div>
+
+        <div class="cv-row">
+            <div class="cv-year">2016</div>
+            <div class="cv-description">
+                Postdoctoral Researcher,
+                Department of Linguistics,
+                Ruhr University Bochum, Germany
+            </div>
+        </div>
+
+        <div class="cv-row">
+            <div class="cv-year">2011–2016</div>
+            <div class="cv-description">
+                PhD, School of Communication Sciences
+                and Disorders,
+                McGill University, Montreal, Canada
+            </div>
+        </div>
+
+        <div class="cv-row">
+            <div class="cv-year">2010–2011</div>
+            <div class="cv-description">
+                Qualifying Year,
+                School of Communication Sciences
+                and Disorders,
+                McGill University, Montreal, Canada
+            </div>
+        </div>
+
+        <div class="cv-row">
+            <div class="cv-year">2007–2009</div>
+            <div class="cv-description">
+                MA in Clinical Linguistics and
+                Speech-Language Therapy,
+                Philipps University Marburg, Germany
+            </div>
+        </div>
+
+        <div class="cv-row">
+            <div class="cv-year">2006–2007</div>
+            <div class="cv-description">
+                German Language Teaching Assistant,
+                Washington and Lee University,
+                Lexington, VA, USA
+            </div>
+        </div>
+
+        <div class="cv-row">
+            <div class="cv-year">2004–2007</div>
+            <div class="cv-description">
+                BA in English and American Studies,
+                University of Bayreuth, Germany
+            </div>
+        </div>
+
+
+        <h2>About Me</h2>
+
+        <div class="bio-text">
+
+            <p>
+                I am a psycholinguist interested in how
+                people comprehend, learn, and remember
+                language. My research focuses on the
+                cognitive mechanisms underlying language
+                processing, with a particular emphasis
+                on how prior knowledge and expectations
+                shape comprehension and memory.
+            </p>
+
+            <p>
+                I investigate how people generate
+                predictions about upcoming language,
+                how they revise these predictions
+                when encountering unexpected information,
+                and how these processes change across
+                the lifespan. More broadly, I am
+                interested in the relationship between
+                language processing, learning, and memory,
+                and in the cognitive mechanisms that
+                support these processes.
+            </p>
+
+            <p>
+                To address these questions, I use
+                experimental methods from cognitive
+                psychology and psycholinguistics,
+                including behavioral experiments,
+                eye-tracking, and online studies.
+            </p>
+
+            <p>
+                From 2022 to 2026, I was Principal
+                Investigator of Project A5,
+                <em>The Role of Language Experience
+                and Surprisal in Learning and Memory</em>,
+                within the Collaborative Research Center
+                <em>Information Density and Linguistic
+                Encoding</em> at Saarland University.
+                Previously, I held research and teaching
+                positions in the Departments of Psychology
+                and Computational Linguistics at Saarland
+                University, as well as a postdoctoral
+                position at Ruhr University Bochum.
+            </p>
+
+            <p>
+                I obtained my PhD from McGill University
+                in Montreal, Canada, where I worked at
+                the Center for Research on Brain,
+                Language and Music. Before that, I
+                studied Clinical Linguistics and
+                Speech-Language Therapy at Philipps
+                University Marburg and English and
+                American Studies at the University
+                of Bayreuth.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <div class="footer-container">
+            © 2026 Katja Haeuser
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
