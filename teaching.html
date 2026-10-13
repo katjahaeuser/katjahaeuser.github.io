@@ -1,1 +1,742 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Teaching | Katja I. Haeuser</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #2d2d2d;
+            background-color: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* ---------- HEADER ---------- */
+
+        header {
+            border-bottom: 1px solid #e8e8e8;
+            background-color: #ffffff;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 25px 35px;
+        }
+
+        nav a {
+            margin-right: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: #555555;
+            text-decoration: none;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #b4513f;
+        }
+
+        /* ---------- MAIN ---------- */
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 45px 35px 90px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .intro {
+            font-size: 15px;
+            color: #666666;
+            margin-bottom: 40px;
+        }
+
+        /* ---------- TEACHING ---------- */
+
+        .semester {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            column-gap: 35px;
+            margin-bottom: 38px;
+        }
+
+        .semester-year {
+            font-size: 15px;
+            font-weight: 600;
+            color: #555555;
+        }
+
+        .degree {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .course {
+            margin-bottom: 18px;
+        }
+
+        .course-title {
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .course-description {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.7;
+            margin-top: 3px;
+        }
+
+        .degree-group {
+            margin-bottom: 20px;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            border-top: 1px solid #e8e8e8;
+            padding: 30px 35px;
+            color: #888888;
+            font-size: 13px;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 750px) {
+
+            nav a {
+                margin-right: 18px;
+                display: inline-block;
+                margin-bottom: 8px;
+            }
+
+            main {
+                padding: 30px 25px 60px;
+            }
+
+            .semester {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .semester-year {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <nav>
+                <a href="/index.html">Home</a>
+                <a href="/publications.html">Publications</a>
+                <a class="active"
+                   href="/teaching.html">Teaching</a>
+                <a href="/bio.html">Bio</a>
+                <a href="/tincans.html">Tin Cans</a>
+                <a href="/text.html">Text</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <h1>Teaching</h1>
+
+        <p class="intro">
+            Courses taught at Saarland University,
+            organized by semester.
+        </p>
+
+        <div id="teaching-list"></div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            © 2026 Katja Haeuser
+        </div>
+    </footer>
+
+    <script>
+
+    /*
+       COURSE DESCRIPTIONS
+    */
+
+    const empirical =
+        "Planung, Durchführung, Auswertung und " +
+        "Verschriftlichung einer empirischen Studie";
+
+    const accompanying =
+        "Laufende Abschlussarbeiten in der Arbeitseinheit " +
+        "Entwicklung von Sprache, Lernen und Handlung";
+
+    const generalPsych =
+        "Lernen und Sprache – Grundlagen des Lernens " +
+        "und der Sprachverarbeitung";
+
+    const introPsych =
+        "Kleingruppenpräsentationen zur Geschichte und " +
+        "zu Anwendungsfeldern der Psychologie; " +
+        "Einführung in wissenschaftliches Arbeiten " +
+        "und APA-Zitation";
+
+    const methods =
+        "Statistische Analyse von Lesezeitdaten mit R; " +
+        "Datenvisualisierung mit Rmisc; lineare Modelle " +
+        "und lineare Mixed-Effects-Modelle; Modellierung " +
+        "von Probanden-, Item- und Trial-Varianz; " +
+        "Random-Effects-Strukturen; Kontrastkodierung " +
+        "und Interpretation von Modellparametern";
+
+    const statistics =
+        "Datenaufbereitung und -exploration in R; " +
+        "deskriptive Statistik; t-Tests; " +
+        "Chi-Quadrat-Tests; Korrelationsanalysen; " +
+        "Varianzanalysen (ANOVA); lineare Regression";
+
+
+    /*
+       HELPER FOR CREATING COURSES
+    */
+
+    function course(title, sws, description, type="Seminar") {
+        return {
+            title: title,
+            sws: sws,
+            description: description,
+            type: type
+        };
+    }
+
+    function empiricalCourse(sws) {
+        return course(
+            "Empirisches Projektmodul",
+            sws,
+            empirical
+        );
+    }
+
+    function accompanyingCourse() {
+        return course(
+            "Begleitseminar",
+            2,
+            accompanying
+        );
+    }
+
+    function generalPsychCourse() {
+        return course(
+            "Allgemeine Psychologie II",
+            1,
+            generalPsych,
+            "Vorlesung"
+        );
+    }
+
+    function methodsCourse() {
+        return course(
+            "Forschungsspezifische Methoden und Evaluation (FM3)",
+            2,
+            methods
+        );
+    }
+
+    function akepp(description) {
+        return course(
+            "Angewandte und Kognitive Entwicklungs- " +
+            "und Pädagogische Psychologie (AKEPP)",
+            2,
+            description
+        );
+    }
+
+    function introCourse() {
+        return course(
+            "Einführung in die Psychologie",
+            2,
+            introPsych
+        );
+    }
+
+    function statisticsCourse() {
+        return course(
+            "Statistics with R",
+            null,
+            statistics,
+            "Vorlesungsbegleitendes Tutorial"
+        );
+    }
+
+
+    /*
+       TEACHING HISTORY
+       BSc = Bachelor of Science Psychology
+       MSc = Master of Science Psychology
+       LST = Bachelor of Science Language Science
+             and Technology
+    */
+
+    const teaching = [
+
+        {
+            semester: "SS 2026",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(4),
+                        accompanyingCourse()
+                    ]
+                },
+                {
+                    degree: "MSc",
+                    courses: [
+                        course(
+                            "Psychologie der Lebensspanne",
+                            2,
+                            "Entwicklungsbedingte Veränderungen " +
+                            "falscher Erinnerungen im DRM-Paradigma " +
+                            "und ihre Erklärung durch kognitive Theorien"
+                        )
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "WS 2025/26",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        generalPsychCourse(),
+                        empiricalCourse(4),
+                        accompanyingCourse()
+                    ]
+                },
+                {
+                    degree: "MSc",
+                    courses: [
+                        course(
+                            "Psychologie der Lebensspanne",
+                            2,
+                            "Bilingualismus und exekutive Funktionen " +
+                            "im Kindesalter"
+                        )
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "SS 2025",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(4),
+                        accompanyingCourse()
+                    ]
+                },
+                {
+                    degree: "MSc",
+                    courses: [
+                        course(
+                            "Psychologie der Lebensspanne",
+                            2,
+                            "Bilingualismus und kognitive Reserve – " +
+                            "Mehrsprachigkeit als möglicher " +
+                            "Schutzfaktor bei Demenz?"
+                        )
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "WS 2024/25",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        generalPsychCourse(),
+                        empiricalCourse(2),
+                        accompanyingCourse()
+                    ]
+                },
+                {
+                    degree: "MSc",
+                    courses: [
+                        akepp(
+                            "Vorhersage bei der Sprachverarbeitung – " +
+                            "empirische Studien und Theorien zum " +
+                            "„Prediction-by-Production“-Modell; " +
+                            "Bilingualismus und exekutive Funktionen"
+                        )
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "SS 2024",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(2)
+                    ]
+                },
+                {
+                    degree: "MSc",
+                    courses: [
+                        methodsCourse(),
+                        akepp(
+                            "Falsche Erinnerungen im DRM Paradigma " +
+                            "und ihre kognitiven Theorien"
+                        ),
+                        course(
+                            "Projektarbeit II",
+                            2,
+                            "Erhebung und Analyse von " +
+                            "Cloze-Wahrscheinlichkeiten " +
+                            "mit zwei Altersgruppen"
+                        )
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "WS 2023/24",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        introCourse(),
+                        empiricalCourse(4)
+                    ]
+                },
+                {
+                    degree: "MSc",
+                    courses: [
+                        akepp(
+                            "Vorhersage bei der Sprachverarbeitung – " +
+                            "empirische Studien zum " +
+                            "„Prediction-by-Production“-Modell; " +
+                            "Bilingualismus und exekutive Funktionen"
+                        )
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "SS 2023",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(4)
+                    ]
+                },
+                {
+                    degree: "MSc",
+                    courses: [
+                        methodsCourse(),
+                        akepp(
+                            "Vorhersage bei der Sprachverarbeitung – " +
+                            "Mechanismen und Evidenz für einen " +
+                            "kognitiven Default"
+                        ),
+                        akepp(
+                            "Vorhersage bei der Sprachverarbeitung – " +
+                            "Mechanismen und Evidenz für einen " +
+                            "kognitiven Default"
+                        )
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "WS 2022/23",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(4),
+                        accompanyingCourse(),
+                        generalPsychCourse()
+                    ]
+                },
+                {
+                    degree: "MSc",
+                    courses: [
+                        akepp(
+                            "Bilingualismus und exekutive Funktionen"
+                        )
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "SS 2022",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(2),
+                        course(
+                            "Kognition Lernen & Entwicklung II",
+                            2,
+                            "Sprachliche Vorhersage und " +
+                            "Vorhersagefehler; Einflüsse von " +
+                            "Vorhersagefehler, Schemakongruenz " +
+                            "und Eventplausibilität auf das Gedächtnis"
+                        )
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "SS 2021",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(2),
+                        course(
+                            "Kognition Lernen & Entwicklung II",
+                            2,
+                            "Sprachliche Vorhersage und Wortlernen; " +
+                            "Vorhersagefehler als Grundlage " +
+                            "wahrer und falscher Erinnerungen"
+                        )
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "WS 2020/21",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(2),
+                        introCourse()
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "SS 2020",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(4)
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "WS 2019/20",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(4)
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "SS 2019",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(4)
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "WS 2018/19",
+            groups: [
+                {
+                    degree: "BSc",
+                    courses: [
+                        empiricalCourse(4)
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "WS 2017/18",
+            groups: [
+                {
+                    degree: "LST",
+                    courses: [
+                        statisticsCourse()
+                    ]
+                }
+            ]
+        },
+
+        {
+            semester: "WS 2016/17",
+            groups: [
+                {
+                    degree: "LST",
+                    courses: [
+                        statisticsCourse()
+                    ]
+                }
+            ]
+        }
+
+    ];
+
+
+    /*
+       DEGREE LABELS
+    */
+
+    const degreeLabels = {
+        BSc: "Bachelor of Science Psychology",
+        MSc: "Master of Science Psychology",
+        LST: "Bachelor of Science Language Science and Technology"
+    };
+
+
+    /*
+       DISPLAY TEACHING HISTORY
+    */
+
+    const teachingList =
+        document.getElementById("teaching-list");
+
+    teaching.forEach(entry => {
+
+        const semesterDiv =
+            document.createElement("div");
+
+        semesterDiv.className = "semester";
+
+        const yearDiv =
+            document.createElement("div");
+
+        yearDiv.className = "semester-year";
+        yearDiv.textContent = entry.semester;
+
+        const contentDiv =
+            document.createElement("div");
+
+        entry.groups.forEach(group => {
+
+            const groupDiv =
+                document.createElement("div");
+
+            groupDiv.className = "degree-group";
+
+            const degreeDiv =
+                document.createElement("div");
+
+            degreeDiv.className = "degree";
+            degreeDiv.textContent =
+                degreeLabels[group.degree];
+
+            groupDiv.appendChild(degreeDiv);
+
+            group.courses.forEach(item => {
+
+                const courseDiv =
+                    document.createElement("div");
+
+                courseDiv.className = "course";
+
+                const titleDiv =
+                    document.createElement("div");
+
+                titleDiv.className = "course-title";
+
+                titleDiv.textContent =
+                    item.type + ": " +
+                    item.title +
+                    (item.sws !== null
+                        ? " (" + item.sws + " SWS)"
+                        : "");
+
+                const descriptionDiv =
+                    document.createElement("div");
+
+                descriptionDiv.className =
+                    "course-description";
+
+                descriptionDiv.textContent =
+                    "Inhalt: " + item.description;
+
+                courseDiv.appendChild(titleDiv);
+                courseDiv.appendChild(descriptionDiv);
+
+                groupDiv.appendChild(courseDiv);
+
+            });
+
+            contentDiv.appendChild(groupDiv);
+
+        });
+
+        semesterDiv.appendChild(yearDiv);
+        semesterDiv.appendChild(contentDiv);
+
+        teachingList.appendChild(semesterDiv);
+
+    });
+
+    </script>
+
+</body>
+</html>
+
