@@ -4,8 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Teaching | Katja I. Haeuser</title>
 
@@ -23,17 +22,28 @@
             line-height: 1.7;
         }
 
-        /* ---------- HEADER ---------- */
+        a {
+            color: #b4513f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #7d3025;
+        }
+
+        /* ---------- HEADER / NAVIGATION ---------- */
 
         header {
             border-bottom: 1px solid #e8e8e8;
-            background-color: #ffffff;
+            background: #ffffff;
         }
 
         .nav-container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 25px 35px;
+            display: flex;
+            align-items: center;
         }
 
         nav a {
@@ -42,8 +52,7 @@
             font-weight: 600;
             letter-spacing: 0.8px;
             text-transform: uppercase;
-            color: #555555;
-            text-decoration: none;
+            color: #555;
         }
 
         nav a:hover,
@@ -56,33 +65,38 @@
         main {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 45px 35px 90px;
+            padding: 90px 35px 100px 35px;
             min-height: 400px;
         }
 
         h1 {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 30px;
+            font-size: 38px;
+            line-height: 1.2;
+            font-weight: 400;
+            margin: 0 0 35px 0;
+            color: #222;
         }
 
+        /* ---------- TEACHING TEXT ---------- */
+
         .teaching-text {
-            font-size: 15px;
-            line-height: 1.9;
-            max-width: 850px;
+            max-width: 930px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
         }
 
         .teaching-text p {
-            margin-bottom: 22px;
+            margin: 0 0 23px 0;
         }
 
         .teaching-text a {
-            color: #b4513f;
-            text-decoration: none;
+            color: #4c9da3;
+            text-decoration: underline;
         }
 
         .teaching-text a:hover {
-            text-decoration: underline;
+            color: #b4513f;
         }
 
         /* ---------- FOOTER ---------- */
@@ -90,18 +104,22 @@
         footer {
             border-top: 1px solid #e8e8e8;
             padding: 30px 35px;
-            color: #888888;
+            color: #888;
             font-size: 13px;
         }
 
         .footer-container {
-            max-width: 1000px;
+            max-width: 930px;
             margin: 0 auto;
         }
 
         /* ---------- MOBILE ---------- */
 
         @media (max-width: 750px) {
+
+            .nav-container {
+                display: block;
+            }
 
             nav a {
                 margin-right: 18px;
@@ -110,30 +128,39 @@
             }
 
             main {
-                padding: 30px 25px 60px;
+                padding-top: 60px;
             }
 
+            h1 {
+                font-size: 30px;
+            }
+
+            .teaching-text {
+                font-size: 15px;
+            }
         }
 
     </style>
 </head>
 
-
 <body>
+
+    <!-- HEADER -->
 
     <header>
         <div class="nav-container">
             <nav>
-                <a href="/index.html">Home</a>
-                <a href="/publications.html">Publications</a>
-                <a class="active" href="/teaching.html">Teaching</a>
-                <a href="/bio.html">Bio</a>
-                <a href="/tincans.html">Tin Cans</a>
-                <a href="/text.html">Text</a>
+                <a href="index.html">Home</a>
+                <a href="publications.html">Publications</a>
+                <a class="active" href="teaching.html">Teaching</a>
+                <a href="cv.html">Bio</a>
+                <a href="tincans.html">Tin Cans</a>
+                <a href="text.html">Text</a>
             </nav>
         </div>
     </header>
 
+    <!-- MAIN CONTENT -->
 
     <main>
 
@@ -142,15 +169,15 @@
         <div class="teaching-text">
 
             <p>
-                This winter semester, I am teaching a
-                lecture in General Psychology (BA level),
-                a research practicum (BA level), and a
-                Master's seminar on the bilingual advantage.
+                This winter semester, I am teaching a lecture
+                in General Psychology (BA level), a research
+                practicum (BA level), and a Master's seminar
+                on the bilingual advantage.
             </p>
 
             <p>
-                For more information on my teaching
-                experience, please download my
+                For more information on my teaching experience,
+                please download my
                 <a href="Teaching_Experience_Katja_Haeuser.pdf"
                    target="_blank"
                    rel="noopener noreferrer">
@@ -162,6 +189,7 @@
 
     </main>
 
+    <!-- FOOTER -->
 
     <footer>
         <div class="footer-container">
